@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
     return (
-        <div className="bg-[#F8FAFC]">
+        <div className="bg-[#F8FAFC] pb-20">
             <div className="text-center space-y-3 py-15">
                 <h1 className="text-3xl font-bold">Friends to keep close in your life</h1>
                 <p className="text-[#64748B]">Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
