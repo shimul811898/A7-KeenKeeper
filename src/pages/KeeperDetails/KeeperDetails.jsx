@@ -6,19 +6,18 @@ import { IoIosArchive } from "react-icons/io";
 import { RiDeleteBin6Line, RiNotificationSnoozeLine } from "react-icons/ri";
 import { useLoaderData, useParams } from "react-router";
 import { KeeperContext } from "../../context/KeeperContext";
-import Keeper from "../homepage/keeper/Keeper";
+
+
 
 const KeeperDetails = () => {
     const { id: keeperParamsId } = useParams();
 
     const keeper = useLoaderData();
-    const expectKeeper = keeper.find(
+
+    const expectedKeeper = keeper.find(
         (friend) => friend.id === Number(keeperParamsId)
     );
 
-    const { handleCall, storeKeeper } = useContext(KeeperContext);
-    // console.log(storeKeeper)
-   
 
     const {
         id,
@@ -32,7 +31,9 @@ const KeeperDetails = () => {
         goal,
         next_due_date,
         preferred_contact,
-    } = expectKeeper;
+    } = expectedKeeper;
+
+     const { handleCall, handleText,handleVideo } = useContext(KeeperContext);
 
 
 
@@ -67,13 +68,12 @@ const KeeperDetails = () => {
 
                         <div>
                             <span
-                                className={`rounded-full px-4 py-2 text-white ${
-                                    status === "overdue"
+                                className={`rounded-full px-4 py-2 text-white ${status === "overdue"
                                         ? "bg-[#EF4444]"
                                         : status === "on-track"
-                                        ? "bg-[#244D3F]"
-                                        : "bg-[#EFAD44]"
-                                }`}
+                                            ? "bg-[#244D3F]"
+                                            : "bg-[#EFAD44]"
+                                    }`}
                             >
                                 {status}
                             </span>
@@ -162,7 +162,7 @@ const KeeperDetails = () => {
                     <div className=" grid grid-cols-3 mx-auto gap-5 justify-center">
                         <div
                             className="text-center bg-[#F8FAFC] shadow-lg py-6 px-4 space-y-2"
-                             onClick={() => handleCall(expectKeeper)}
+                            onClick={() => handleCall(expectedKeeper)}
                         >
                             <h1 className="text-3xl grid justify-center">
                                 <FiPhoneCall />
@@ -172,7 +172,9 @@ const KeeperDetails = () => {
                             </p>
                         </div>
 
-                        <div className="text-center bg-[#F8FAFC] shadow-lg py-6 px-4 space-y-2">
+                        <div className="text-center bg-[#F8FAFC] shadow-lg py-6 px-4 space-y-2"
+                        onClick={() => handleText(expectedKeeper)}
+                        >
                             <h1 className="text-3xl grid justify-center">
                                 <BsChatSquareText />
                             </h1>
@@ -181,7 +183,9 @@ const KeeperDetails = () => {
                             </p>
                         </div>
 
-                        <div className="text-center bg-[#F8FAFC] shadow-lg py-6 px-4 space-y-2">
+                        <div className="text-center bg-[#F8FAFC] shadow-lg py-6 px-4 space-y-2"
+                        onClick={() => handleVideo(expectedKeeper)}
+                        >
                             <h1 className="text-3xl grid justify-center">
                                 <FaVideo />
                             </h1>

@@ -5,12 +5,18 @@ import { RouterProvider } from "react-router/dom";
 import './index.css'
 import { router } from "./routes/Routes";
 import KeeperProvider from "./context/KeeperContext";
+import { Toaster } from "react-hot-toast";
 
 
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
   <KeeperProvider>
-  <RouterProvider router={router} />
-</KeeperProvider>
+    <Toaster
+      position="top-center"
+      reverseOrder={false}
+    />
+    <RouterProvider router={router} />
+  </KeeperProvider>
+
 );

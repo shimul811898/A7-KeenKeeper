@@ -1,34 +1,76 @@
-import React, { createContext } from "react";
-import { useState } from "react";
+import React, { createContext, useState } from "react";
+import { toast } from "react-hot-toast";
 
 export const KeeperContext = createContext();
 
 const KeeperProvider = ({ children }) => {
-    const [storeKeeper, setStoreKeeper] = useState([]);
 
-    const handleCall = (currantFriend) => {
-        const isExistKeeper = storeKeeper.find(
-            (friend) => friend.id === currantFriend.id
+    const [callList, setCallList] = useState([]);
+    const [textList, setTextList] = useState([]);
+    const [videoList, setVideoList] = useState([]);
+
+
+    const handleCall = (currentFriend) => {
+        const isExistInCallList = callList.find(
+            (item) => item.id === currentFriend.id
         );
 
-        if (isExistKeeper) {
-            alert("This friend is already exist");
+        if (isExistInCallList) {
+            toast.error(`${currentFriend.name}`);
         } else {
-            setStoreKeeper((prev) => [...prev, currantFriend]);
-            // alert(`${currantFriend.name} is add to list`)
+
+            const newEntry = { ...currentFriend, addedAt: new Date().toLocaleString() };
+            setCallList([...callList, newEntry]);
+
+            toast.success(`${currentFriend.name} `);
+        }
+    };
+    const handleText = (currentFriend) => {
+        const isExistInTextList = textList.find(
+            (item) => item.id === currentFriend.id
+        );
+
+        if (isExistInTextList) {
+            toast.error(`${currentFriend.name}`);
+        } else {
+
+            const newEntry = { ...currentFriend, addedAt: new Date().toLocaleString() };
+            setTextList([...textList, newEntry]);
+
+            toast.success(`${currentFriend.name} `);
+        }
+    };
+    const handleVideo = (currentFriend) => {
+        const isExistInVideoList = videoList.find(
+            (item) => item.id === currentFriend.id
+        );
+
+        if (isExistInVideoList) {
+            toast.error(`${currentFriend.name}`);
+        } else {
+
+            const newEntry = { ...currentFriend, addedAt: new Date().toLocaleString() };
+            setVideoList([...videoList, newEntry]);
+
+            toast.success(`${currentFriend.name} `);
         }
     };
 
+
     const value = {
-        setStoreKeeper,
+        callList,
+        setCallList,
         handleCall,
+        textList,
+        setTextList,
+        handleText,
+        videoList,
+        handleVideo,
+        setVideoList
+        
     };
- 
-    return (
-        <KeeperContext.Provider  value={value}>
-            {children}
-        </KeeperContext.Provider>
-    );
+
+    return <KeeperContext.Provider value={value}>{children}</KeeperContext.Provider>;
 };
 
 export default KeeperProvider;
