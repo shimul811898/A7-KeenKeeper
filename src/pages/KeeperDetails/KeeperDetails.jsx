@@ -38,7 +38,8 @@ const KeeperDetails = () => {
 
 
     return (
-        <div className=" flex mx-auto gap-10 justify-center py-20">
+     <div className="max-w-7xl">
+           <div className="max-w-6xl lg:flex sm:grid grid-cols-1 space-y-12  mx-auto gap-10 justify-center py-20">
             <div className="">
                 <div className="text-center  space-y-3 transition duration-200 ">
                     <div className="card shadow-sm px-10 py-5">
@@ -114,7 +115,7 @@ const KeeperDetails = () => {
 
             </div>
 
-            <div className="max-w-8xl space-y-6">
+            <div className="max-w-7xl space-y-6 ">
                 <div className=" grid grid-cols-3 mx-auto gap-5 justify-center">
                     <div className="text-center bg-white shadow-lg py-6 px-4 space-y-2">
                         <h1 className="text-3xl font-bold">{days_since_contact}</h1>
@@ -197,6 +198,7 @@ const KeeperDetails = () => {
                 </div>
             </div>
         </div>
+     </div>
     );
 };
 

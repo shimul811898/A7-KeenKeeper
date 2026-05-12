@@ -8,11 +8,11 @@ const AllKeeper = () => {
     const keeper = use(keeperPromise);
 
     return (
-        <div className="space-y-4 mt-30">
-            <div className="max-w-6xl text-start mx-auto" >
+        <div className="max-w-6xl space-y-4 mt-30 mx-auto">
+            <div className="max-w-7xl mx-auto" >
                 <h1 className="text-3xl font-bold">Your Friends</h1>
             </div>
-            <div className="max-w-6xl grid grid-cols-4 mx-auto gap-10 justify-center items-center">
+            <div className=" grid lg:grid-cols-4  gap-10 justify-center items-center sm:grid-cols-1 ">
                 {keeper.map((friend, ind) => {
                     return (
                         <KeeperCard key={ind} friend={friend}/>
