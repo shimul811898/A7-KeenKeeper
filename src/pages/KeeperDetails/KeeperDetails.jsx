@@ -162,7 +162,7 @@ const KeeperDetails = () => {
 
                     <div className=" grid grid-cols-3 mx-auto gap-5 justify-center">
                         <div
-                            className="text-center bg-[#F8FAFC] shadow-lg py-6 px-4 space-y-2"
+                            className="text-center bg-[#F8FAFC] shadow-lg py-6 border border-slate-300 px-4 space-y-2"
                             onClick={() => handleCall(expectedKeeper)}
                         >
                             <h1 className="text-3xl grid justify-center">
@@ -173,7 +173,7 @@ const KeeperDetails = () => {
                             </p>
                         </div>
 
-                        <div className="text-center bg-[#F8FAFC] shadow-lg py-6 px-4 space-y-2"
+                        <div className="text-center bg-[#F8FAFC] shadow-lg border border-slate-300 py-6 px-4 space-y-2"
                         onClick={() => handleText(expectedKeeper)}
                         >
                             <h1 className="text-3xl grid justify-center">
@@ -184,7 +184,7 @@ const KeeperDetails = () => {
                             </p>
                         </div>
 
-                        <div className="text-center bg-[#F8FAFC] shadow-lg py-6 px-4 space-y-2"
+                        <div className="text-center bg-[#F8FAFC] shadow-lg py-6 border border-slate-300 px-4 space-y-2"
                         onClick={() => handleVideo(expectedKeeper)}
                         >
                             <h1 className="text-3xl grid justify-center">

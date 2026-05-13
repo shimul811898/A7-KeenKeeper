@@ -1,17 +1,20 @@
 import React from "react";
+import { CiTimer } from "react-icons/ci";
+import { IoHomeOutline } from "react-icons/io5";
+import { TfiStatsUp } from "react-icons/tfi";
 import { NavLink } from "react-router";
 
 const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink to={"/"} className={({ isActive }) => `font-bold px-3 py-2 ${isActive ? "bg-[#244D3F] text-white px-3 py-1 rounded" : ""}`}>Home</NavLink>
+        <NavLink to={"/"} className={({ isActive }) => `flex items-center gap-2 font-bold px-6 py-2 rounded text-[#64748B]  ${isActive ? "bg-[#244D3F] text-white px-3 py-1 text-center rounded" : ""}`}> <IoHomeOutline /><span> Home</span></NavLink>
       </li>
       <li>
-        <NavLink to={"/keeper"} className={({ isActive }) => `font-bold px-3 py-2 ${isActive ? "bg-[#244D3F] text-white px-3 py-1 rounded" : ""}`}>TimeLine</NavLink>
+        <NavLink to={"/keeper"} className={({ isActive }) => `font-bold px-3 flex items-center gap-1 py-2 text-[#64748B]  ${isActive ? "bg-[#244D3F] text-white px-3 py-1 rounded" : ""}`}> <CiTimer /> <span>TimeLine</span></NavLink>
       </li>
       <li>
-        <NavLink to={"/dashboard"} className={({ isActive }) => `font-bold px-3 py-2 ${isActive ? "bg-[#244D3F] text-white px-3 py-1 rounded" : ""}`}>Stats</NavLink>
+        <NavLink to={"/dashboard"} className={({ isActive }) => `font-bold flex items-center gap-1 px-3 py-2 text-[#64748B]  ${isActive ? "bg-[#244D3F] text-white px-3 py-1 rounded" : ""}`}><TfiStatsUp /> <span>Stats</span> Stats</NavLink>
       </li>
     </>
   )

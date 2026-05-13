@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
     return (
         <div>
-            <footer className="max-w-7xl footer footer-horizontal mt-30 footer-center text-center bg-[#244D3F] text-white p-10">
+            <footer className="max-w-7xl footer footer-horizontal mt-15 footer-center text-center bg-[#244D3F] text-white p-10">
                 <aside className="space-y-3.5">
                      <h1 className="text-4xl font-bold">KeenKeeper</h1>
                      <p className="text-[#FFFFFF70]">Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
