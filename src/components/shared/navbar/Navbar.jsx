@@ -11,7 +11,7 @@ const Navbar = () => {
         <NavLink to={"/keeper"} className={({ isActive }) => `font-bold px-3 py-2 ${isActive ? "bg-[#244D3F] text-white px-3 py-1 rounded" : ""}`}>TimeLine</NavLink>
       </li>
       <li>
-        <NavLink to={"/page-to-read"} className={({ isActive }) => `font-bold px-3 py-2 ${isActive ? "bg-[#244D3F] text-white px-3 py-1 rounded" : ""}`}>Stats</NavLink>
+        <NavLink to={"/dashboard"} className={({ isActive }) => `font-bold px-3 py-2 ${isActive ? "bg-[#244D3F] text-white px-3 py-1 rounded" : ""}`}>Stats</NavLink>
       </li>
     </>
   )

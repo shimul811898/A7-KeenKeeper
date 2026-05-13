@@ -4,6 +4,7 @@ import Homepage from "../pages/homepage/Homepage";
 import Keeper from "../pages/keeper/Keeper";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import KeeperDetails from "../pages/KeeperDetails/KeeperDetails";
+import DashBoard from "../pages/dashboard/DashBoard";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
       {
         path: "/keeper",
         element: <Keeper />,
+      },
+      {
+        path: "/dashboard",
+        element: <DashBoard />,
       },
       {
         path: "/keeperDetails/:id",
